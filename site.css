@@ -45,14 +45,14 @@ h3{margin:0;font:600 16px/24px Assistant,sans-serif;color:var(--white)}
 
 /* header */
 header{margin-bottom:8px}
-header .col{display:flex;align-items:center;gap:26px;min-height:64px;flex-wrap:wrap;padding-block:10px;
+header .col{display:flex;align-items:center;gap:24px;min-height:68px;flex-wrap:wrap;padding-block:10px;
   border-bottom:1px solid var(--line)}
-header .avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--cardline);display:block}
+header .avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--cardline);display:block}
 header .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none}
 header .brand:hover{text-decoration:none}
-header .name{font:italic 600 21px/1.2 Lora,Georgia,serif;color:var(--ink)}
-nav{display:flex;flex-wrap:wrap;gap:4px 20px}
-nav a{color:var(--soft);font-size:15px;padding:6px 0}
+header .name{font:italic 600 24px/36px Lora,Georgia,serif;color:var(--ink)}
+nav{display:flex;flex-wrap:wrap;gap:2px 22px}
+nav a{color:var(--soft);font:400 16px/24px Assistant,sans-serif;padding:7px 0}
 nav a:hover{color:var(--ink);text-decoration:none}
 nav a[aria-current=page]{color:var(--ink);font-weight:600}
 
