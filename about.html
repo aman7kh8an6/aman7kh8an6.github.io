@@ -26,9 +26,9 @@
 <p>Chess, which I like analysing afterwards with an engine, plus cricket and badminton. I am learning German, currently around A1–A2, and I speak English, Hindi and Urdu.</p></section>
 <section><div class="head"><h2>Contact</h2></div>
 <ul class="items">
-<li class="block"><b>Email</b><span class="d"><a href="mailto:aman7khan8@gmail.com">aman7khan8@gmail.com</a></span></li>
-<li class="block"><b>Profiles</b><span class="d"><a href="https://www.linkedin.com/in/aman-khan-ai/">LinkedIn</a> · <a href="https://github.com/aman7kh8an6/">GitHub</a> · <a href="https://leetcode.com/u/grinderAman/">LeetCode</a></span></li>
-<li class="block"><b>Based in</b><span class="d">Berlin, Germany</span></li>
+<li><b>Email</b><span class="d"><a href="mailto:aman7khan8@gmail.com">aman7khan8@gmail.com</a></span></li>
+<li><b>Profiles</b><span class="d"><a href="https://www.linkedin.com/in/aman-khan-ai/">LinkedIn</a> · <a href="https://github.com/aman7kh8an6/">GitHub</a> · <a href="https://leetcode.com/u/grinderAman/">LeetCode</a></span></li>
+<li><b>Based in</b><span class="d">Berlin, Germany</span></li>
 </ul></section>
 
 </main>
@@ -41,7 +41,8 @@
   <p class="fine">© 2026 Aman Khan · Berlin, Germany · built from scratch, like everything else</p>
 </div></footer>
 <script>{const r=document.documentElement,b=document.getElementById("themeBtn");
-b.addEventListener("click",()=>{const dark=getComputedStyle(r).getPropertyValue("--bg").trim()!=="#faf9f6";
-const next=dark?"light":"dark";r.dataset.theme=next;try{localStorage.setItem("theme",next)}catch(e){}});}</script>
+const sysLight=()=>window.matchMedia("(prefers-color-scheme: light)").matches;
+b.addEventListener("click",()=>{const cur=r.dataset.theme||(sysLight()?"light":"dark");
+const next=cur==="dark"?"light":"dark";r.dataset.theme=next;try{localStorage.setItem("theme",next)}catch(e){}});}</script>
 </body>
 </html>

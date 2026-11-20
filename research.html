@@ -22,10 +22,10 @@
 <p>Computing ΔG exactly for every pair is far too slow at that scale. The approach is filter-and-verify: embed every target once, use nearest-neighbour search to pull a small candidate set for a query, then compute exact ΔG only on those candidates. The idea comes from <a href="https://www.biorxiv.org/content/10.64898/2026.03.01.708874v1">FlashPPI</a>, which does this for protein interactions, and from the <a href="https://arxiv.org/abs/2109.09740">NeuroSEED</a> framework for embedding biological sequences. The difference for DNA is that binding depends on complementarity rather than similarity.</p></section>
 <section><div class="head"><h2>What I have established so far</h2></div>
 <ul class="items">
-<li class="block"><b>It is a range query, not top-K.</b><span class="d">We want all sites below the energy threshold, and the number of hits varies per query, so recall is measured against that whole set.</span></li>
-<li class="block"><b>Mismatch count is a weak proxy for binding energy.</b><span class="d">Measured on sequences with varied GC content, edit distance only loosely tracks ΔG, which leaves real room for a learned embedding to help.</span></li>
-<li class="block"><b>It needs two separate encoders.</b><span class="d">A sequence binds its reverse complement far more strongly than itself, so binding is not a symmetric metric on one set. That rules out a single shared encoder and forces a query tower and a target tower.</span></li>
-<li class="block"><b>A first learned encoder generalises.</b><span class="d">It places sequences it has never seen, and the bar to beat is a cheap reverse-complement-aware k-mer baseline that needs no training at all. Closing that gap is the research question.</span></li>
+<li><b>It is a range query, not top-K.</b><span class="d">We want all sites below the energy threshold, and the number of hits varies per query, so recall is measured against that whole set.</span></li>
+<li><b>Mismatch count is a weak proxy for binding energy.</b><span class="d">Measured on sequences with varied GC content, edit distance only loosely tracks ΔG, which leaves real room for a learned embedding to help.</span></li>
+<li><b>It needs two separate encoders.</b><span class="d">A sequence binds its reverse complement far more strongly than itself, so binding is not a symmetric metric on one set. That rules out a single shared encoder and forces a query tower and a target tower.</span></li>
+<li><b>A first learned encoder generalises.</b><span class="d">It places sequences it has never seen, and the bar to beat is a cheap reverse-complement-aware k-mer baseline that needs no training at all. Closing that gap is the research question.</span></li>
 </ul>
 <p class="small muted" style="margin-top:14px">Measurements and figures stay with the lab; this page describes the shape of the work rather than its results.</p></section>
 <section><div class="head"><h2>Methods and tools</h2></div>
@@ -43,7 +43,8 @@
   <p class="fine">© 2026 Aman Khan · Berlin, Germany · built from scratch, like everything else</p>
 </div></footer>
 <script>{const r=document.documentElement,b=document.getElementById("themeBtn");
-b.addEventListener("click",()=>{const dark=getComputedStyle(r).getPropertyValue("--bg").trim()!=="#faf9f6";
-const next=dark?"light":"dark";r.dataset.theme=next;try{localStorage.setItem("theme",next)}catch(e){}});}</script>
+const sysLight=()=>window.matchMedia("(prefers-color-scheme: light)").matches;
+b.addEventListener("click",()=>{const cur=r.dataset.theme||(sysLight()?"light":"dark");
+const next=cur==="dark"?"light":"dark";r.dataset.theme=next;try{localStorage.setItem("theme",next)}catch(e){}});}</script>
 </body>
 </html>

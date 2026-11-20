@@ -22,19 +22,19 @@
 </section>
 <section><div class="head"><h2>Education</h2></div>
 <ul class="items">
-<li class="block"><b>MSc Artificial Intelligence</b> — BTU Cottbus-Senftenberg <span class="date">Apr 2025 – 2027 (expected)</span><span class="d">Computing at Scale in Machine Learning (Prof. Schliep): parallel and distributed ML, Spark/Ray, sketching algorithms, Bloom filters, index-based ML. Seminar talk on Hist-Tree and learned indexes. Also Data Mining, Data Warehousing, Information Retrieval, Causal Data Science.</span></li>
-<li class="block"><b>B.Tech Computer Science &amp; Engineering</b> — Jaypee University of Engineering &amp; Technology <span class="date">2017 – 2021</span><span class="d">Data structures and algorithms, database systems, distributed systems, operating systems, compiler design.</span></li>
+<li><b>MSc Artificial Intelligence</b> — BTU Cottbus-Senftenberg <span class="date">Apr 2025 – 2027 (expected)</span><span class="d">Computing at Scale in Machine Learning (Prof. Schliep): parallel and distributed ML, Spark/Ray, sketching algorithms, Bloom filters, index-based ML. Seminar talk on Hist-Tree and learned indexes. Also Data Mining, Data Warehousing, Information Retrieval, Causal Data Science.</span></li>
+<li><b>B.Tech Computer Science &amp; Engineering</b> — Jaypee University of Engineering &amp; Technology <span class="date">2017 – 2021</span><span class="d">Data structures and algorithms, database systems, distributed systems, operating systems, compiler design.</span></li>
 </ul></section>
 <section><div class="head"><h2>Certifications</h2></div>
-<ul class="items"><li class="block">AI-first Software Engineering, Infosys <span class="date">· Jan 2024</span></li><li class="block">Generative AI Landscape, Infosys <span class="date">· Jan 2024</span></li><li class="block">Infosys Certified Python Associate <span class="date">· Apr 2023</span></li><li class="block">Infosys Certified Software Programmer</li><li class="block">Problem Solving (Basic), HackerRank <span class="date">· May 2021</span></li></ul></section>
+<ul class="items"><li>AI-first Software Engineering, Infosys <span class="date">· Jan 2024</span></li><li>Generative AI Landscape, Infosys <span class="date">· Jan 2024</span></li><li>Infosys Certified Python Associate <span class="date">· Apr 2023</span></li><li>Infosys Certified Software Programmer</li><li>Problem Solving (Basic), HackerRank <span class="date">· May 2021</span></li></ul></section>
 <section><div class="head"><h2>Toolbox</h2></div>
 <ul class="items">
-<li class="block"><b>Programming</b><span class="d">Python (pandas, NumPy, pytest), C++17, SQL and PL/SQL, SQLScript, shell (bash, ksh)</span></li>
-<li class="block"><b>Data platforms</b><span class="d">Snowflake, SAP HANA, Oracle, Google BigQuery, AWS S3</span></li>
-<li class="block"><b>Pipelines</b><span class="d">ETL/ELT design, PySpark, batch and real-time flows, Airflow, Autosys, CI/CD</span></li>
-<li class="block"><b>Systems</b><span class="d">B+Trees, hash and learned indexes, paged I/O, buffer management, concurrency, query optimisation, Linux</span></li>
-<li class="block"><b>ML &amp; AI</b><span class="d">PyTorch (learning), contrastive learning, embeddings, vector search (FAISS, Qdrant), LangChain, Ollama, LLM evaluation</span></li>
-<li class="block"><b>Tools</b><span class="d">Git, Docker, Tableau, Jupyter, HANA Studio</span></li>
+<li><b>Programming</b><span class="d">Python (pandas, NumPy, pytest), C++17, SQL and PL/SQL, SQLScript, shell (bash, ksh)</span></li>
+<li><b>Data platforms</b><span class="d">Snowflake, SAP HANA, Oracle, Google BigQuery, AWS S3</span></li>
+<li><b>Pipelines</b><span class="d">ETL/ELT design, PySpark, batch and real-time flows, Airflow, Autosys, CI/CD</span></li>
+<li><b>Systems</b><span class="d">B+Trees, hash and learned indexes, paged I/O, buffer management, concurrency, query optimisation, Linux</span></li>
+<li><b>ML &amp; AI</b><span class="d">PyTorch (learning), contrastive learning, embeddings, vector search (FAISS, Qdrant), LangChain, Ollama, LLM evaluation</span></li>
+<li><b>Tools</b><span class="d">Git, Docker, Tableau, Jupyter, HANA Studio</span></li>
 </ul></section>
 
 </main>
@@ -47,7 +47,8 @@
   <p class="fine">© 2026 Aman Khan · Berlin, Germany · built from scratch, like everything else</p>
 </div></footer>
 <script>{const r=document.documentElement,b=document.getElementById("themeBtn");
-b.addEventListener("click",()=>{const dark=getComputedStyle(r).getPropertyValue("--bg").trim()!=="#faf9f6";
-const next=dark?"light":"dark";r.dataset.theme=next;try{localStorage.setItem("theme",next)}catch(e){}});}</script>
+const sysLight=()=>window.matchMedia("(prefers-color-scheme: light)").matches;
+b.addEventListener("click",()=>{const cur=r.dataset.theme||(sysLight()?"light":"dark");
+const next=cur==="dark"?"light":"dark";r.dataset.theme=next;try{localStorage.setItem("theme",next)}catch(e){}});}</script>
 </body>
 </html>
