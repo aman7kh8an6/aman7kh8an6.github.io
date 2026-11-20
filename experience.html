@@ -4,49 +4,50 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Experience · Aman Khan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500;1,600&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
-<div class="col">
-<header>
-  <div class="top"><span class="mono" aria-hidden="true">AK</span><a class="name" href="index.html">Aman Khan</a></div>
+<header><div class="col">
+  <a class="name" href="index.html">Aman Khan</a>
   <nav aria-label="Site"><a href="index.html">Home</a><a href="research.html">Research</a><a href="experience.html" aria-current="page">Experience</a><a href="projects.html">Projects</a><a href="papershelf.html">Papershelf</a><a href="writing.html">Writing</a><a href="about.html">About</a></nav>
-</header>
-<main>
+  <button class="theme" type="button" id="themeBtn" aria-label="Switch between light and dark"><span class="moon">&#9790;</span><span class="sun">&#9728;</span></button>
+</div></header>
+<main class="col">
 
-<div class="pagehead"><h1>Experience</h1><p class="tagline">Almost four years of production data engineering, now research.</p></div>
-<section><div class="head"><h2>Roles</h2><a href="https://www.linkedin.com/in/aman-khan-ai/details/experience/">On LinkedIn ➔</a></div><p class="intro">Reverse chronological.</p>
+<div class="pagehead"><h1>Experience</h1><p class="tagline">almost four years of production data engineering, now research.</p></div>
+<section><div class="head"><h2>Roles</h2><span class="dot">•</span><a href="https://www.linkedin.com/in/aman-khan-ai/details/experience/">On LinkedIn →</a></div><p class="intro">Reverse chronological.</p>
 <div class="job"><h3>Research Intern</h3><div class="where">Schliep Lab, BTU Cottbus-Senftenberg</div><div class="when">Nov 2026 – present · Cottbus, hybrid</div><ul><li>Embedding-based retrieval of oligonucleotide binding sites, combining learned sequence encoders, nearest-neighbour search and thermodynamic verification. <a href="research.html">More on the Research page</a>.</li></ul></div><div class="job"><h3>LLM Trainer</h3><div class="where">Turing</div><div class="when">Sep 2025 – Feb 2026 · Remote, contract</div><ul><li>Built automated evaluation frameworks in Python (pytest, Docker) that measured model output quality against defined metrics.</li><li>Analysed failure modes and edge cases in model outputs.</li></ul></div><div class="job"><h3>Technology Analyst, Data Engineering</h3><div class="where">Infosys (client: Apple)</div><div class="when">Oct 2024 – Mar 2025 · Pune, India</div><ul><li>Took end-to-end ownership of the final phase of the SAP HANA → Oracle/Snowflake customer master migration, running batch processing on an Airflow-based platform with Autosys scheduling for continuous hourly loads.</li><li>Owned production reliability: triaged data-quality breaks in near real time and kept hourly loads running without extended downtime.</li><li>Served as the client-facing point of contact for requirements and status updates.</li></ul></div><div class="job"><h3>Senior System Engineer, Data Engineering</h3><div class="where">Infosys (client: Apple)</div><div class="when">Aug 2022 – Oct 2024 · Pune, India</div><ul><li>Owned and maintained 300+ ETL pipelines across about 27 SAP customer master interfaces, migrating multi-million-row tables from SAP HANA to Oracle and Snowflake in parallel with AWS S3 and Python.</li><li>Built and optimised 50+ core, staging and view tables in Snowflake with indexing and partitioning strategies.</li><li>Implemented real-time and batch data flows from SAP HANA to reduce latency.</li><li>Automated monitoring and error handling in Python and shell, cutting manual interventions by about 20%.</li><li>Found a race condition where records were silently dropped while the pipeline reported success, and fixed it at the root with synchronisation logic instead of a retry workaround.</li></ul></div><div class="job"><h3>System Engineer, SAP HANA &amp; Reporting</h3><div class="where">Infosys (client: Apple)</div><div class="when">Jun 2021 – Jul 2022 · Pune, India</div><ul><li>Designed a SAP HANA database in HANA Studio for a report utility portal, cutting report generation time by 40%.</li><li>Wrote parameterised stored procedures for year, month and quarter queries, improving user productivity by 35%.</li><li>Built summary and detail report modules and a CRUD utility that cut manual workload by 60%.</li><li>Added validation and exception handling that reduced data anomalies by 30%.</li></ul></div>
 </section>
 <section><div class="head"><h2>Education</h2></div>
 <ul class="items">
-<li><b>MSc Artificial Intelligence</b>, BTU Cottbus-Senftenberg <span class="date">· Apr 2025 – 2027 (expected)</span><span class="d">Computing at Scale in Machine Learning (Prof. Schliep): parallel and distributed ML, Spark/Ray, sketching algorithms, Bloom filters, index-based ML. Seminar talk on Hist-Tree and learned indexes. Also Data Mining, Data Warehousing, Information Retrieval, Causal Data Science.</span></li>
-<li><b>B.Tech Computer Science &amp; Engineering</b>, Jaypee University of Engineering &amp; Technology <span class="date">· 2017 – 2021</span><span class="d">Data structures and algorithms, database systems, distributed systems, operating systems, compiler design.</span></li>
+<li class="block"><b>MSc Artificial Intelligence</b> — BTU Cottbus-Senftenberg <span class="date">Apr 2025 – 2027 (expected)</span><span class="d">Computing at Scale in Machine Learning (Prof. Schliep): parallel and distributed ML, Spark/Ray, sketching algorithms, Bloom filters, index-based ML. Seminar talk on Hist-Tree and learned indexes. Also Data Mining, Data Warehousing, Information Retrieval, Causal Data Science.</span></li>
+<li class="block"><b>B.Tech Computer Science &amp; Engineering</b> — Jaypee University of Engineering &amp; Technology <span class="date">2017 – 2021</span><span class="d">Data structures and algorithms, database systems, distributed systems, operating systems, compiler design.</span></li>
 </ul></section>
 <section><div class="head"><h2>Certifications</h2></div>
-<ul class="items"><li>AI-first Software Engineering, Infosys <span class="date">· Jan 2024</span></li><li>Generative AI Landscape, Infosys <span class="date">· Jan 2024</span></li><li>Infosys Certified Python Associate <span class="date">· Apr 2023</span></li><li>Infosys Certified Software Programmer</li><li>Problem Solving (Basic), HackerRank <span class="date">· May 2021</span></li></ul></section>
+<ul class="items"><li class="block">AI-first Software Engineering, Infosys <span class="date">· Jan 2024</span></li><li class="block">Generative AI Landscape, Infosys <span class="date">· Jan 2024</span></li><li class="block">Infosys Certified Python Associate <span class="date">· Apr 2023</span></li><li class="block">Infosys Certified Software Programmer</li><li class="block">Problem Solving (Basic), HackerRank <span class="date">· May 2021</span></li></ul></section>
 <section><div class="head"><h2>Toolbox</h2></div>
 <ul class="items">
-<li><b>Programming</b><span class="d">Python (pandas, NumPy, pytest), C++17, SQL and PL/SQL, SQLScript, shell (bash, ksh)</span></li>
-<li><b>Data platforms</b><span class="d">Snowflake, SAP HANA, Oracle, Google BigQuery, AWS S3</span></li>
-<li><b>Pipelines</b><span class="d">ETL/ELT design, PySpark, batch and real-time flows, Airflow, Autosys, CI/CD</span></li>
-<li><b>Systems</b><span class="d">B+Trees, hash and learned indexes, paged I/O, buffer management, concurrency, query optimisation, Linux</span></li>
-<li><b>ML &amp; AI</b><span class="d">PyTorch (learning), contrastive learning, embeddings, vector search (FAISS, Qdrant), LangChain, Ollama, LLM evaluation</span></li>
-<li><b>Tools</b><span class="d">Git, Docker, Tableau, Jupyter, HANA Studio</span></li>
+<li class="block"><b>Programming</b><span class="d">Python (pandas, NumPy, pytest), C++17, SQL and PL/SQL, SQLScript, shell (bash, ksh)</span></li>
+<li class="block"><b>Data platforms</b><span class="d">Snowflake, SAP HANA, Oracle, Google BigQuery, AWS S3</span></li>
+<li class="block"><b>Pipelines</b><span class="d">ETL/ELT design, PySpark, batch and real-time flows, Airflow, Autosys, CI/CD</span></li>
+<li class="block"><b>Systems</b><span class="d">B+Trees, hash and learned indexes, paged I/O, buffer management, concurrency, query optimisation, Linux</span></li>
+<li class="block"><b>ML &amp; AI</b><span class="d">PyTorch (learning), contrastive learning, embeddings, vector search (FAISS, Qdrant), LangChain, Ollama, LLM evaluation</span></li>
+<li class="block"><b>Tools</b><span class="d">Git, Docker, Tableau, Jupyter, HANA Studio</span></li>
 </ul></section>
 
 </main>
-<footer>
+<footer><div class="col">
   <div class="groups">
     <div><h4>Work</h4><ul><li><a href="research.html">Research</a></li><li><a href="experience.html">Experience</a></li><li><a href="projects.html">Projects</a></li></ul></div>
     <div><h4>Reading &amp; writing</h4><ul><li><a href="papershelf.html">Papershelf</a></li><li><a href="writing.html">Writing</a></li><li><a href="https://leetcode.com/u/grinderAman/">LeetCode</a></li></ul></div>
     <div><h4>About &amp; contact</h4><ul><li><a href="about.html">About me</a></li><li><a href="mailto:aman7khan8@gmail.com">aman7khan8@gmail.com</a></li><li><a href="https://www.linkedin.com/in/aman-khan-ai/">LinkedIn</a> · <a href="https://github.com/aman7kh8an6/">GitHub</a></li></ul></div>
   </div>
-  <div class="fine"><span>© 2026 Aman Khan · Berlin, Germany. Built from scratch, like everything else.</span></div>
-</footer>
-</div>
+  <p class="fine">© 2026 Aman Khan · Berlin, Germany · built from scratch, like everything else</p>
+</div></footer>
+<script>{const r=document.documentElement,b=document.getElementById("themeBtn");
+b.addEventListener("click",()=>{const dark=getComputedStyle(r).getPropertyValue("--bg").trim()!=="#faf9f6";
+const next=dark?"light":"dark";r.dataset.theme=next;try{localStorage.setItem("theme",next)}catch(e){}});}</script>
 </body>
 </html>
