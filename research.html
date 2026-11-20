@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research · Aman Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="col">
+<header>
+  <div class="top"><span class="mono" aria-hidden="true">AK</span><a class="name" href="index.html">Aman Khan</a></div>
+  <nav aria-label="Site"><a href="index.html">Home</a><a href="research.html" aria-current="page">Research</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="papershelf.html">Papershelf</a><a href="writing.html">Writing</a><a href="about.html">About</a></nav>
+</header>
+<main>
+
+<div class="pagehead"><h1>Research</h1><p class="tagline">Embedding-based retrieval of oligonucleotide binding sites.</p></div>
+<section><div class="head"><h2>Where</h2></div>
+<p>Research Intern at the <a href="https://schlieplab.org/">Medical Bioinformatics group of Prof. Alexander Schliep</a>, BTU Cottbus-Senftenberg, since November 2026, guided by a PhD student in the group. The lab works on AI for antisense oligonucleotide (ASO) drug design.</p></section>
+<section><div class="head"><h2>The problem</h2></div>
+<p>Given a short query oligonucleotide of about 15–25 nucleotides, find every site in a very large sequence database that it could bind, meaning sites where the binding free energy ΔG falls below a threshold. This matters for drug design, because an oligo that also binds unintended sites causes off-target effects.</p>
+<p>Computing ΔG exactly for every pair is far too slow at that scale. The approach is filter-and-verify: embed every target once, use nearest-neighbour search to pull a small candidate set for a query, then compute exact ΔG only on those candidates. The idea comes from <a href="https://www.biorxiv.org/content/10.64898/2026.03.01.708874v1">FlashPPI</a>, which does this for protein interactions, and from the <a href="https://arxiv.org/abs/2109.09740">NeuroSEED</a> framework for embedding biological sequences. The difference for DNA is that binding depends on complementarity rather than similarity.</p></section>
+<section><div class="head"><h2>What I&#x27;ve established so far</h2></div>
+<ul class="items">
+<li><b>It's a range query, not top-K.</b><span class="d">We want all sites below the energy threshold, and the number of hits varies per query, so recall is measured against that whole set.</span></li>
+<li><b>Mismatch count is a weak proxy for binding energy.</b><span class="d">Measured on sequences with varied GC content, edit distance only loosely tracks ΔG, which leaves real room for a learned embedding to help.</span></li>
+<li><b>It needs two separate encoders.</b><span class="d">A sequence binds its reverse complement far more strongly than itself, so binding is not a symmetric metric on one set. That rules out a single shared encoder and forces a query tower and a target tower.</span></li>
+<li><b>A first learned encoder generalises.</b><span class="d">It places sequences it has never seen, and the bar to beat is a cheap reverse-complement-aware k-mer baseline that needs no training at all. Closing that gap is the research question.</span></li>
+</ul>
+<p class="small muted">Measurements and figures stay with the lab; this page describes the shape of the work rather than its results.</p></section>
+<section><div class="head"><h2>Methods and tools</h2></div>
+<p class="small">Python, NumPy and primer3 for thermodynamics · PyTorch for the encoders · contrastive learning with InfoNCE · FAISS and approximate nearest-neighbour indexes · DNA language models (DNABERT-2, HyenaDNA, Nucleotide Transformer) under evaluation. Related reading is on my <a href="papershelf.html">papershelf</a>.</p></section>
+<section><div class="head"><h2>Background</h2></div>
+<p>I also gave an MSc seminar talk on <a href="https://vldb.org/cidrdb/2021/hist-tree-those-who-ignore-it-are-doomed-to-learn.html">Hist-Tree</a> and learned index structures, arguing that classical indexes can match learned ones on read-only sorted data without the build and retraining cost. I read the three learned indexes it is measured against — RMI, the PGM-index and RadixSpline — alongside it. Indexing and retrieval is the thread connecting that talk, <a href="projects.html">miniDB</a> and this project.</p></section>
+
+</main>
+<footer>
+  <div class="groups">
+    <div><h4>Work</h4><ul><li><a href="research.html">Research</a></li><li><a href="experience.html">Experience</a></li><li><a href="projects.html">Projects</a></li></ul></div>
+    <div><h4>Reading &amp; writing</h4><ul><li><a href="papershelf.html">Papershelf</a></li><li><a href="writing.html">Writing</a></li><li><a href="https://leetcode.com/u/grinderAman/">LeetCode</a></li></ul></div>
+    <div><h4>About &amp; contact</h4><ul><li><a href="about.html">About me</a></li><li><a href="mailto:aman7khan8@gmail.com">aman7khan8@gmail.com</a></li><li><a href="https://www.linkedin.com/in/aman-khan-ai/">LinkedIn</a> · <a href="https://github.com/aman7kh8an6/">GitHub</a></li></ul></div>
+  </div>
+  <div class="fine"><span>© 2026 Aman Khan · Berlin, Germany. Built from scratch, like everything else.</span></div>
+</footer>
+</div>
+</body>
+</html>
