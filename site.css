@@ -5,26 +5,23 @@
    LAYOUT: one wide ruled column, sections as heading + lead line + list, two columns where they pair. */
 :root{
   color-scheme:dark light;
-  --bg:#1a1a1a;--ink:#e0e0e0;--soft:#7a7a7a;--line:#2e2e2e;--card:#222;--cardhi:#262626;
-  --coral:#ff6b6b;--count:#fa4b4b;--link:#7aa2f7;--white:#fff;
-  --grid:rgba(255,255,255,.02);
+  --bg:#16181c;--ink:#e6e8ea;--soft:#848c96;--line:#262a30;--card:#1c1f24;--cardhi:#20242a;
+  --coral:#f0b429;--count:#e8902c;--link:#86b3ff;--white:#fff;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 :root[data-theme=light]{
   color-scheme:light;
-  --bg:#faf9f6;--ink:#1f1f1f;--soft:#6e6e6e;--line:#e3e0d9;--card:#fff;--cardhi:#fffdf8;
-  --coral:#d94848;--count:#d92020;--link:#2b55c4;--white:#111;--grid:rgba(0,0,0,.035);
+  --bg:#faf7f0;--ink:#211d17;--soft:#6b6356;--line:#e4ded1;--card:#fffdf8;--cardhi:#fffbf2;
+  --coral:#c2410c;--count:#b91c1c;--link:#1d4ed8;--white:#15110c;
 }
 @media (prefers-color-scheme: light){:root:not([data-theme=dark]){
   color-scheme:light;
-  --bg:#faf9f6;--ink:#1f1f1f;--soft:#6e6e6e;--line:#e3e0d9;--card:#fff;--cardhi:#fffdf8;
-  --coral:#d94848;--count:#d92020;--link:#2b55c4;--white:#111;--grid:rgba(0,0,0,.035);
+  --bg:#faf7f0;--ink:#211d17;--soft:#6b6356;--line:#e4ded1;--card:#fffdf8;--cardhi:#fffbf2;
+  --coral:#c2410c;--count:#b91c1c;--link:#1d4ed8;--white:#15110c;
 }}
 *{box-sizing:border-box;min-width:0}
 body{
-  margin:0;background-color:var(--bg);color:var(--ink);
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:40px 40px,40px 40px;
+  margin:0;background:var(--bg);color:var(--ink);
   font:16px/1.5 Assistant,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip;
 }
 .col{max-width:1120px;margin:0 auto;padding:0 28px}
@@ -43,7 +40,11 @@ p{margin:0 0 14px}
 /* header */
 header{border-bottom:1px solid var(--line)}
 header .col{display:flex;align-items:center;gap:26px;min-height:64px;flex-wrap:wrap;padding-block:10px}
-header .name{font:italic 600 21px Lora,Georgia,serif;color:var(--ink);margin-right:auto}
+header .avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;
+  border:1px solid var(--line);display:block}
+header .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none}
+header .brand:hover{text-decoration:none}
+header .name{font:italic 600 21px Lora,Georgia,serif;color:var(--ink)}
 header .name:hover{text-decoration:none}
 nav{display:flex;flex-wrap:wrap;gap:4px 20px}
 nav a{color:var(--soft);font-size:15px;padding:6px 0}
