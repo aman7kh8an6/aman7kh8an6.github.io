@@ -26,7 +26,9 @@
 body{margin:0;background:var(--bg);color:var(--ink);
   font:400 16px/24px Assistant,system-ui,-apple-system,"Segoe UI",sans-serif;
   -webkit-font-smoothing:antialiased;overflow-x:clip}
-.col{width:min(1152px,100% - 32px);margin-inline:auto}
+.col{width:calc(100% - 32px);max-width:960px;margin-inline:auto}
+@media(min-width:1216px){.col{max-width:1152px}}
+@media(min-width:1408px){.col{max-width:1344px}}
 a{color:var(--link);text-decoration:none}
 a:hover{text-decoration:underline;text-underline-offset:3px}
 a:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:3px}
@@ -42,8 +44,9 @@ h3{margin:0;font:600 16px/24px Assistant,sans-serif;color:var(--white)}
 @media(max-width:620px){h1{font-size:32px;line-height:38px}.head.lora h2{font-size:21px;line-height:31px}}
 
 /* header */
-header{border-bottom:1px solid var(--line);margin-bottom:8px}
-header .col{display:flex;align-items:center;gap:26px;min-height:64px;flex-wrap:wrap;padding-block:10px}
+header{margin-bottom:8px}
+header .col{display:flex;align-items:center;gap:26px;min-height:64px;flex-wrap:wrap;padding-block:10px;
+  border-bottom:1px solid var(--line)}
 header .avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--cardline);display:block}
 header .brand{display:flex;align-items:center;gap:11px;margin-right:auto;text-decoration:none}
 header .brand:hover{text-decoration:none}
@@ -54,8 +57,8 @@ nav a:hover{color:var(--ink);text-decoration:none}
 nav a[aria-current=page]{color:var(--ink);font-weight:600}
 
 /* hero */
-.hero{padding:40px 0 8px;max-width:660px}
-.pagehead{padding:40px 0 0;max-width:660px}
+.hero{padding:40px 0 8px;max-width:min(57%,790px)}
+.pagehead{padding:40px 0 0;max-width:min(57%,790px)}
 .tagline{margin:0 0 24px;font:italic 600 24px/36px Lora,Georgia,serif;color:var(--coral)}
 @media(max-width:620px){.tagline{font-size:20px;line-height:30px}}
 .avail{display:inline-flex;align-items:center;gap:8px;font:400 12.8px/19px var(--mono);color:var(--soft);margin-bottom:14px}
@@ -90,7 +93,8 @@ section{padding:40px 0 0}
 
 /* two-column band */
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
-@media(max-width:860px){.two{grid-template-columns:minmax(0,1fr);gap:32px}}
+@media(max-width:860px){.two{grid-template-columns:minmax(0,1fr);gap:32px}
+  .hero,.pagehead{max-width:none}}
 
 /* lists */
 ul.items{list-style:none;margin:0;padding:0}
@@ -120,7 +124,8 @@ details.more{margin-top:18px}
 details.more summary{cursor:pointer;color:var(--link);font-size:15px;min-height:44px;display:flex;align-items:center}
 
 /* footer */
-footer{margin-top:52px;border-top:1px solid var(--line);padding:26px 0 46px}
+footer{margin-top:52px;padding:0 0 46px}
+footer .col{border-top:1px solid var(--line);padding-top:26px}
 .groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 @media(max-width:560px){.groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .groups h4{font:700 11.2px/16.8px var(--mono);letter-spacing:.56px;text-transform:uppercase;color:var(--soft);margin:0 0 8px}
